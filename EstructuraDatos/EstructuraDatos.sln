@@ -9,6 +9,8 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "4.1Media", "4.1Media\4.1Med
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "4.3Notass", "4.3Notass\4.3Notass.vbproj", "{809DFC5A-5296-49BD-94B3-42339A079F85}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "4.4DominioPais", "4.4DominioPais\4.4DominioPais.vbproj", "{FB46EB9D-9801-4134-920F-18BCC0559C6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{809DFC5A-5296-49BD-94B3-42339A079F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{809DFC5A-5296-49BD-94B3-42339A079F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{809DFC5A-5296-49BD-94B3-42339A079F85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB46EB9D-9801-4134-920F-18BCC0559C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB46EB9D-9801-4134-920F-18BCC0559C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB46EB9D-9801-4134-920F-18BCC0559C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB46EB9D-9801-4134-920F-18BCC0559C6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
