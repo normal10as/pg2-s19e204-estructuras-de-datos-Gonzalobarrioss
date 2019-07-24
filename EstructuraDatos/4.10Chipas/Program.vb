@@ -3,28 +3,65 @@ Imports System
 Module Program
 
     Sub Main(args As String())
-        Dim produccion As New List(Of Integer)
-        Dim dia As Byte
-        Dim cantidad As Integer
-        For x = 0 To 6
-            produccion.Add(0)
-        Next
+
         Dim empleados As New SortedList(Of String, String)
         empleados.Add("pp", "pepe")
         empleados.Add("gon", "gonza")
         empleados.Add("mat", "matias")
+
+        Dim pepe As New List(Of Integer)
+        Dim gonza As New List(Of Integer)
+        Dim matias As New List(Of Integer)
+
+        For x = 0 To 6
+            pepe.Add(0)
+            gonza.Add(0)
+            matias.Add(0)
+        Next
+
+        Dim eleccion As Byte
+        Dim dia As Byte
+        Dim cantidad As Integer
+
         Do
-            Console.WriteLine("Cuanto produjo (0=FIN)")
-            cantidad = Console.ReadLine()
-            If cantidad = 0 Then
+            Console.WriteLine("Elija un empleado (0=FIN)")
+            Console.WriteLine("1-" & empleados.Item("pp"))
+            Console.WriteLine("2-" & empleados.Item("gon"))
+            Console.WriteLine("3-" & empleados.Item("mat"))
+            eleccion = Console.ReadLine()
+            If eleccion = 0 Then
                 Exit Do
             End If
+
+            Console.WriteLine("Cantidad de produccion:")
+            cantidad = Console.ReadLine()
+
             dia = semana()
-            produccion.Insert(dia, cantidad)
-            produccion.RemoveAt(7)
+
+            Select Case eleccion
+                Case 1
+                    cantidad = cantidad + pepe.Item(dia)
+                    pepe.Insert(dia, cantidad)
+                    pepe.RemoveAt(dia + 1)
+                Case 2
+                    cantidad = cantidad + gonza.Item(dia)
+                    gonza.Insert(dia, cantidad)
+                    gonza.RemoveAt(dia + 1)
+                Case 3
+                    cantidad = cantidad + matias.Item(dia)
+                    matias.Insert(dia, cantidad)
+                    matias.RemoveAt(dia + 1)
+            End Select
+
         Loop
+        Console.WriteLine("Todos los empleados: ")
         MostrarTodos(empleados)
-        MostrarEmp(produccion)
+        Console.WriteLine("empleado 1")
+        MostrarEmp(pepe)
+        Console.WriteLine("empleado 2")
+        MostrarEmp(gonza)
+        Console.WriteLine("empleado 3")
+        MostrarEmp(matias)
     End Sub
 
     Private Sub MostrarEmp(lista As List(Of Integer))
@@ -38,7 +75,7 @@ Module Program
     Sub MostrarTodos(lista As SortedList(Of String, String))
         Console.WriteLine("Lista completa")
         For Each kvp As KeyValuePair(Of String, String) In lista
-            Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value)
+            Console.WriteLine("Clave emp= {0}, Nombre = {1}", kvp.Key, kvp.Value)
         Next
         Console.WriteLine("")
     End Sub
