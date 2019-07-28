@@ -39,7 +39,7 @@ Module Program
         Console.WriteLine("Ingrese codigo de bebida")
         codigo = Console.ReadLine()
         If bebidas.ContainsKey(codigo) Then
-            Console.WriteLine("Codigo ya existe")
+            Console.WriteLine("Codigo existente")
             agregarBebida()
         Else
             Console.WriteLine("Ingrese nombre de bebida")
@@ -66,7 +66,7 @@ Module Program
             cod_precio = Console.ReadLine()
             precios.RemoveAt(cod_precio - 1)
         Else
-            Console.WriteLine("no existe ese codigo")
+            Console.WriteLine("Codigo inexistente")
         End If
         menu()
     End Sub
@@ -92,7 +92,7 @@ Module Program
             precio = Console.ReadLine()
             precios.Insert(cod_precio - 1, precio)
         Else
-            Console.WriteLine("ese codigo no existe.")
+            Console.WriteLine("Codigo inexistente.")
         End If
         menu()
     End Sub
